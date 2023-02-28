@@ -14,7 +14,7 @@ The class `SingleCluster` is an internal class for TrendFlow. It represents the 
 - `print_keyphrases(self)`: print all the keyphrases
 
 
-## ClusterList
+## `ClusterList` class
 The list representation of clusters.
 
 ### Instance Functions

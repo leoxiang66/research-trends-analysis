@@ -1,7 +1,7 @@
 # Article
 This section introduces the class `Article` and `ArticleList`.
 
-## Article
+## `Article` class
 The class `Article` is an internal class for TrendFlow. 
 
 ### Instance Attributes
@@ -15,7 +15,7 @@ The class `Article` is an internal class for TrendFlow.
 - `to_dict(self) -> dict`: return the dict form of this article
 
 
-## ArticleList
+## `ArticleList` class
 The list representation of articles.
 
 ### Instance Functions
