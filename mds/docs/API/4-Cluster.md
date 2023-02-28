@@ -1,7 +1,7 @@
 # Cluster
 This section introduces the class `SingleCluster` and `ClusterList`.
 
-## SingleCluster
+## `SingleCluster` class
 The class `SingleCluster` is an internal class for TrendFlow. It represents the clusters of article after the clustering procedure in TrendFlow. It stores the keyphrases of the cluster.
 
 ### Instance Attributes
