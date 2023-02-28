@@ -87,7 +87,7 @@ class ClusterPipeline:
         else:
             print(f'>>> start keywords extraction')
             for cluster in clusters:
-                doc_ids = cluster.elements()
+                doc_ids = cluster.get_elements()
                 input_abstracts = [documents[i] for i in doc_ids] #[str]
                 keyphrases = self.keywords_extraction(input_abstracts) #[{keys...}]
                 cluster.add_keyphrase(keyphrases)

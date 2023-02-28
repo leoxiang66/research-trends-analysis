@@ -35,7 +35,7 @@ class SingleCluster:
         self.__container__.append(id)
     def __str__(self) -> str:
         return str(self.__container__)
-    def elements(self) -> List:
+    def get_elements(self) -> List:
         return self.__container__
     def get_keyphrases(self):
         ret = []
