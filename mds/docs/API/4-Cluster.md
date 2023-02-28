@@ -5,7 +5,7 @@ This section introduces the class `SingleCluster` and `ClusterList`.
 The class `SingleCluster` is an internal class for TrendFlow. It represents the clusters of article after the clustering procedure in TrendFlow. It stores the keyphrases of the cluster.
 
 ### Instance Attributes
-- '``top_5_keyphrases (list)`: the top-5 keyphrases of the cluster
+- `top_5_keyphrases (list)`: the top-5 keyphrases of the cluster
 
 
 ### Instance Functions
