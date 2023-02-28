@@ -13,7 +13,7 @@
       <script>
         // Current page data
         var mkdocs_page_name = "Literature Search";
-        var mkdocs_page_input_path = "API\\1-Literature Search.md";
+        var mkdocs_page_input_path = "API/1-Literature Search.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -58,6 +58,8 @@
     </li>
     </ul>
                   </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../2-Research%20Trends%20Analysis/">Research Trends Analysis</a>
+                  </li>
               </ul>
       </div>
     </div>
@@ -91,9 +93,9 @@ tf.search_papers('machine learning', 2018, 2022, 50, to_pandas=True)
 </code></pre>
 <h3 id="parameters">Parameters</h3>
 <ul>
-<li>query (string): Keywords for searching literature</li>
-<li>start_year (int): start year of the papers</li>
-<li>end_year (int): end year of the papers</li>
+<li>query (string): keywords for searching literature</li>
+<li>start_year (int): start publication year of the papers</li>
+<li>end_year (int): end publication year of the papers</li>
 <li>num_papers (int): number of papers to search</li>
 <li>to_pandas (bool): if set to true, then the search results are converted to <code>pd.Dataframe</code>, otherwise a list of dicts</li>
 </ul>
@@ -263,6 +265,7 @@ tf.search_papers('machine learning', 2018, 2022, 50, to_pandas=True)
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../.." class="btn btn-neutral float-left" title="TrendFlow Doc"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../2-Research%20Trends%20Analysis/" class="btn btn-neutral float-right" title="Research Trends Analysis">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -287,6 +290,8 @@ tf.search_papers('machine learning', 2018, 2022, 50, to_pandas=True)
     
       <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../2-Research%20Trends%20Analysis/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

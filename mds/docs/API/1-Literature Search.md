@@ -7,9 +7,9 @@ import trendflow as tf
 tf.search_papers('machine learning', 2018, 2022, 50, to_pandas=True)
 ```
 ### Parameters
-- query (string): Keywords for searching literature
-- start_year (int): start year of the papers
-- end_year (int): end year of the papers
+- query (string): keywords for searching literature
+- start_year (int): start publication year of the papers
+- end_year (int): end publication year of the papers
 - num_papers (int): number of papers to search
 - to_pandas (bool): if set to true, then the search results are converted to `pd.Dataframe`, otherwise a list of dicts
 
