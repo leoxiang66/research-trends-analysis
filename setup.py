@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-from widgets.sidebar import APP_VERSION
+
 
 with open("README.md", "r") as readme_file:
     readme = readme_file.read()
@@ -21,8 +21,8 @@ requirements = [
 ]
 
 setup(
-    name="LiteratureResearchTool",
-    version=f'{APP_VERSION[1:]}',
+    name="TrendFlow",
+    version=f'0.1.0',
     author="Tao Xiang",
     author_email="tao.xiang@tum.de",
     description="A tool for literature research and analysis",
