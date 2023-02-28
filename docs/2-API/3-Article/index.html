@@ -118,12 +118,14 @@
 </ul>
 <h3 id="instance-functions">Instance Functions</h3>
 <ul>
+<li><code>def __init__(self, title: str, authors: List[str], abstract: str, url: str, publication_year: int) -&gt; None</code>: create an <code>Article</code> object.</li>
 <li><code>to_dict(self) -&gt; dict</code>: return the dict form of this article</li>
 </ul>
 <h2 id="articlelist-class"><code>ArticleList</code> class</h2>
 <p>The list representation of articles.</p>
 <h3 id="instance-functions_1">Instance Functions</h3>
 <ul>
+<li><code>def __init__(self,articles:Optional[Union[Article, List[Article]]]=None) -&gt; None</code>: create an <code>ArticleList</code> object from one <code>Article</code> or a list of <code>Article</code>.</li>
 <li><code>addArticles(self, articles:Union[Article, List[Article]])</code>: add article to the list</li>
 <li><code>to_dataframe(self) -&gt;pd.DataFrame</code>: convert to <code>pd.DataFrame</code> object </li>
 <li><code>getArticles(self) -&gt; List[Article]:</code> return a list of the articles</li>
