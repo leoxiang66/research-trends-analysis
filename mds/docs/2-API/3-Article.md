@@ -12,6 +12,7 @@ The class `Article` is an internal class for TrendFlow.
 - publication_year (int): the publication year of the article
 
 ### Instance Functions
+- `def __init__(self, title: str, authors: List[str], abstract: str, url: str, publication_year: int) -> None`: create an `Article` object.
 - `to_dict(self) -> dict`: return the dict form of this article
 
 
@@ -19,6 +20,7 @@ The class `Article` is an internal class for TrendFlow.
 The list representation of articles.
 
 ### Instance Functions
+- `def __init__(self,articles:Optional[Union[Article, List[Article]]]=None) -> None`: create an `ArticleList` object from one `Article` or a list of `Article`.
 - `addArticles(self, articles:Union[Article, List[Article]])`: add article to the list
 - `to_dataframe(self) ->pd.DataFrame`: convert to `pd.DataFrame` object 
 - `getArticles(self) -> List[Article]:` return a list of the articles
