@@ -3,7 +3,6 @@ from typing import List
 import textdistance as td
 from .utils import UnionFind, ArticleList
 from .academic_query import AcademicQuery
-from tokenizers import Tokenizer
 from .clustering.clusters import KeyphraseCount
 
 
@@ -62,8 +61,9 @@ class LiteratureResearchTool:
                  standardization = False
                  ):
 
-
+        ret = dict()
         for platform in platforms:
+            print(f'>>> Search on {platform}...')
             if loading_ctx_manager:
                 with loading_ctx_manager():
                     clusters, articles = self.__platformPipeline__(platform,query,num_papers,start_year,end_year,max_k,standardization)
@@ -71,7 +71,13 @@ class LiteratureResearchTool:
                 clusters, articles = self.__platformPipeline__(platform, query, num_papers, start_year, end_year,max_k,standardization)
 
             clusters.sort()
-            yield clusters,articles
+            if platform == 'IEEE':
+                ret['ieee'] = clusters,articles
+            elif platform == 'Arxiv':
+                ret['arxiv'] = clusters,articles
+            elif platform == 'Paper with Code':
+                ret ['paper_with_code'] = clusters,articles
+        return ret
 
 
 
