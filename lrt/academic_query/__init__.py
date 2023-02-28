@@ -1,0 +1,1 @@
+from .academic import AcademicQuery
