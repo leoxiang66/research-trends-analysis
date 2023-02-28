@@ -9,7 +9,7 @@ tf.search_papers('machine learning', 2018, 2022, 50, to_pandas=True)
 **To analyze the research trends:**
 ```python
 import trendflow as tf
-result = tf.trends_analysis('machine learning', 50,2018,2022,platforms=['ieee','arxiv'])
+result = tf.trends_analysis('machine learning', 50,2018,2022,platforms=['IEEE','Arxiv'])
 ieee_clusters, ieee_articles = result['ieee']
 
 # all the papers returned from IEEE
@@ -27,3 +27,5 @@ indexes = ieee_clusters[0].get_elements()
 # get the articles in the first cluster
 articles = [ieee_articles[i] for i in indexes]
 ```
+
+**Colab Example**: [link](https://colab.research.google.com/gist/leoxiang66/9476fa6a0487686dd7145c64bcc18d62/untitled1.ipynb)

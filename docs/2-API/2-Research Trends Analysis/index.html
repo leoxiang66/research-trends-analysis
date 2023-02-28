@@ -105,7 +105,7 @@
 </ol>
 <h2 id="function">Function</h2>
 <pre><code class="language-python">import trendflow as tf
-result = tf.trends_analysis('machine learning', 50,2018,2022,platforms=['ieee','arxiv'])
+result = tf.trends_analysis('machine learning', 50,2018,2022,platforms=['IEEE','Arxiv'])
 ieee_clusters, ieee_articles = result['ieee']
 </code></pre>
 <h3 id="parameters">Parameters</h3>
@@ -114,7 +114,7 @@ ieee_clusters, ieee_articles = result['ieee']
 <li>num_papers (int): number of papers to search,</li>
 <li>start_year (int): start publication year of the papers,</li>
 <li>end_year (int): end publication year of the papers,</li>
-<li>platforms (list) : what platforms to search on, defaut = ['ieee', 'arxiv', 'paper_with_code']</li>
+<li>platforms (list) : what platforms to search on, defaut = ['IEEE', 'Arxiv', 'Paper with Code']</li>
 </ul>
 <h3 id="return">Return</h3>
 <p>return a dict object containing keys <code>'ieee'</code>, <code>'arxiv'</code> and <code>'paper_with_code'</code>. The values for each key is a tuple of <code>ClusterList</code> and <code>ArticleList</code> objects</p>

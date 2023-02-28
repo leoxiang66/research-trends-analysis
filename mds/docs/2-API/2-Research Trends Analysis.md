@@ -8,7 +8,7 @@ Based on the query entered by the user, TrendFlow
 ## Function
 ```python
 import trendflow as tf
-result = tf.trends_analysis('machine learning', 50,2018,2022,platforms=['ieee','arxiv'])
+result = tf.trends_analysis('machine learning', 50,2018,2022,platforms=['IEEE','Arxiv'])
 ieee_clusters, ieee_articles = result['ieee']
 ```
 
@@ -17,7 +17,7 @@ ieee_clusters, ieee_articles = result['ieee']
 - num_papers (int): number of papers to search,
 - start_year (int): start publication year of the papers,
 - end_year (int): end publication year of the papers,
-- platforms (list) : what platforms to search on, defaut = ['ieee', 'arxiv', 'paper_with_code']
+- platforms (list) : what platforms to search on, defaut = ['IEEE', 'Arxiv', 'Paper with Code']
 
 ### Return
 return a dict object containing keys `'ieee'`, `'arxiv'` and `'paper_with_code'`. The values for each key is a tuple of `ClusterList` and `ArticleList` objects
