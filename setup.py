@@ -28,7 +28,7 @@ setup(
     description="A tool for literature research and analysis",
     long_description=readme,
     long_description_content_type="text/markdown",
-    url="https://github.com/Mondkuchen/idp_LiteratureResearch_Tool",
+    url="https://github.com/leoxiang66/research-trends-analysis",
     packages=find_packages(),
     install_requires=requirements,
     classifiers=[
