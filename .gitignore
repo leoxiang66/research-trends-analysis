@@ -2,3 +2,5 @@
 .idea
 trendflow
 venv
+*.sh
+*.ps1
