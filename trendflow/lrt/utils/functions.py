@@ -1,10 +1,9 @@
 from typing import List
 from sentence_transformers import SentenceTransformer
-from kmeans_pytorch import kmeans
 import torch
 from sklearn.cluster import KMeans
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM,Text2TextGenerationPipeline
-from inference_hf import InferenceHF
+from trendflow.inference_hf import InferenceHF
 from .dimension_reduction import PCA
 from unsupervised_learning.clustering import GaussianMixture
 from models import KeyBartAdapter
@@ -23,7 +22,6 @@ class Template:
         }
 
         self.clustering = {
-            'kmeans-cosine': kmeans,
             'kmeans-euclidean': KMeans,
             'gmm': GaussianMixture
         }

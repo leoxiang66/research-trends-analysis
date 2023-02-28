@@ -6,8 +6,8 @@ if __name__ == '__main__':
         __file__).parent.parent.parent.absolute()  # /home/adapting/git/leoxiang66/idp_LiteratureResearch_Tool
     sys.path.append(project_root.__str__())
 
-    from lrt import LiteratureResearchTool, Configuration
-    from lrt.utils import ArticleList
+    from trendflow.lrt import LiteratureResearchTool, Configuration
+
     config = Configuration(
         plm= 'all-mpnet-base-v2',
         dimension_reduction='pca',

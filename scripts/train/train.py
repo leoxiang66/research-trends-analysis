@@ -12,8 +12,8 @@ def train(
     dataset = load_dataset("Adapting/abstract-keyphrases")
 
     # 2. Model
-    from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-    from lrt.clustering.models import KeyBartAdapter
+    from transformers import AutoTokenizer
+    from trendflow.lrt.clustering.models import KeyBartAdapter
     tokenizer = AutoTokenizer.from_pretrained("Adapting/KeyBartAdapter")
 
     '''

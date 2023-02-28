@@ -7,10 +7,7 @@ if __name__ == '__main__':
     sys.path.append(project_root.__str__())
 
     import torch
-    from lrt.clustering.models.keyBartPlus import *
-    from lrt.clustering.models.adapter import *
-    from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
-    import os
+    from transformers import AutoModelForSeq2SeqLM
 
     ####################### Adapter Test #############################
     input_dim = 1024

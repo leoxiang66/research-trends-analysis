@@ -3,7 +3,6 @@ from typing import List
 import textdistance as td
 from .utils import UnionFind, ArticleList
 from .academic_query import AcademicQuery
-import streamlit as st
 from tokenizers import Tokenizer
 from .clustering.clusters import KeyphraseCount
 
@@ -85,7 +84,7 @@ class LiteratureResearchTool:
                              standardization
                              ) -> (ClusterList,ArticleList):
 
-        @st.cache(hash_funcs={Tokenizer: Tokenizer.__hash__},allow_output_mutation=True)
+
         def ieee_process(
                 query: str,
                 num_papers: int,
@@ -99,7 +98,6 @@ class LiteratureResearchTool:
             clusters = self.__postprocess_clusters__(clusters,query)
             return clusters, articles
 
-        @st.cache(hash_funcs={Tokenizer: Tokenizer.__hash__},allow_output_mutation=True)
         def arxiv_process(
                 query: str,
                 num_papers: int,
@@ -111,7 +109,7 @@ class LiteratureResearchTool:
             clusters = self.__postprocess_clusters__(clusters,query)
             return clusters, articles
 
-        @st.cache(hash_funcs={Tokenizer: Tokenizer.__hash__},allow_output_mutation=True)
+
         def pwc_process(
                 query: str,
                 num_papers: int,
