@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../img/favicon.ico" />
-    <title>Article - TrendFlow</title>
+    <title>Cluster - TrendFlow</title>
     <link rel="stylesheet" href="../../css/theme.css" />
     <link rel="stylesheet" href="../../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Article";
-        var mkdocs_page_input_path = "API/3-Article.md";
+        var mkdocs_page_name = "Cluster";
+        var mkdocs_page_input_path = "API/4-Cluster.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -50,9 +50,11 @@
                   </li>
                   <li class="toctree-l1"><a class="reference internal" href="../2-Research%20Trends%20Analysis/">Research Trends Analysis</a>
                   </li>
-                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Article</a>
+                  <li class="toctree-l1"><a class="reference internal" href="../3-Article/">Article</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="./">Cluster</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#article_1">Article</a>
+    <li class="toctree-l2"><a class="reference internal" href="#singlecluster">SingleCluster</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#instance-attributes">Instance Attributes</a>
     </li>
@@ -60,17 +62,13 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#articlelist">ArticleList</a>
+    <li class="toctree-l2"><a class="reference internal" href="#clusterlist">ClusterList</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#instance-functions_1">Instance Functions</a>
-    </li>
-    <li class="toctree-l3"><a class="reference internal" href="#class-functions">Class Functions</a>
     </li>
         </ul>
     </li>
     </ul>
-                  </li>
-                  <li class="toctree-l1"><a class="reference internal" href="../4-Cluster/">Cluster</a>
                   </li>
               </ul>
       </div>
@@ -88,7 +86,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
           <li>API &raquo;</li>
-      <li>Article</li>
+      <li>Cluster</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -97,44 +95,31 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="article">Article</h1>
-<p>This section introduces the class <code>Article</code> and <code>ArticleList</code>.</p>
-<h2 id="article_1">Article</h2>
-<p>The class <code>Article</code> is an internal class for TrendFlow. </p>
+                <h1 id="cluster">Cluster</h1>
+<p>This section introduces the class <code>SingleCluster</code> and <code>ClusterList</code>.</p>
+<h2 id="singlecluster">SingleCluster</h2>
+<p>The class <code>SingleCluster</code> is an internal class for TrendFlow. It represents the clusters of article after the clustering procedure in TrendFlow. It stores the keyphrases of the cluster.</p>
 <h3 id="instance-attributes">Instance Attributes</h3>
 <ul>
-<li>title (str): the title of the article</li>
-<li>authors (list of str): the authors of the article</li>
-<li>abstract (str): the abstract of the articles</li>
-<li>url (str): the url of the article</li>
-<li>publication_year (int): the publication year of the article</li>
+<li>'<code>`top_5_keyphrases (list)</code>: the top-5 keyphrases of the cluster</li>
 </ul>
 <h3 id="instance-functions">Instance Functions</h3>
 <ul>
-<li><code>to_dict(self) -&gt; dict</code>: return the dict form of this article</li>
+<li><code>get_elements(self) -&gt; List</code>: return a list of article indexes of this cluster. The indexes are with respect to the associated <code>ArticleList</code> object returned by TrendFlow.</li>
+<li><code>get_keyphrases(self) -&gt; List</code>: return a list of (keyphrase, count of keyphrase).</li>
+<li><code>print_keyphrases(self)</code>: print all the keyphrases</li>
 </ul>
-<h2 id="articlelist">ArticleList</h2>
-<p>The list representation of articles.</p>
+<h2 id="clusterlist">ClusterList</h2>
+<p>The list representation of clusters.</p>
 <h3 id="instance-functions_1">Instance Functions</h3>
 <ul>
-<li><code>addArticles(self, articles:Union[Article, List[Article]])</code>: add article to the list</li>
-<li><code>to_dataframe(self) -&gt;pd.DataFrame</code>: convert to <code>pd.DataFrame</code> object </li>
-<li><code>getArticles(self) -&gt; List[Article]:</code> return a list of the articles</li>
-<li><code>getAbstracts(self) -&gt; List[str]</code>: return a list of abstracts of the articles</li>
-<li><code>getTitles(self) -&gt; List[str]:</code>: return a list of titles of the articles</li>
-</ul>
-<h3 id="class-functions">Class Functions</h3>
-<ul>
-<li><code>parse_ieee_articles(cls,items: Union[dict, List[dict]])</code>: parse the search results from IEEE platform into a <code>ArticleList</code> object</li>
-<li><code>parse_arxiv_articles(cls, items: Union[dict, List[dict]])</code>: parse the search results from Arxiv platform into a <code>ArticleList</code> object</li>
-<li><code>parse_pwc_articles(cls, items: Union[dict, List[dict]])</code>: parse the search results from Paper with Code platform into a <code>ArticleList</code> object</li>
+<li><code>sort(self)</code>: sort the clusters according to the size of each cluster (i.e. the number of articles within the cluster) descendingly</li>
 </ul>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../2-Research%20Trends%20Analysis/" class="btn btn-neutral float-left" title="Research Trends Analysis"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../4-Cluster/" class="btn btn-neutral float-right" title="Cluster">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../3-Article/" class="btn btn-neutral float-left" title="Article"><span class="icon icon-circle-arrow-left"></span> Previous</a>
     </div>
 
   <hr/>
@@ -157,10 +142,8 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../2-Research%20Trends%20Analysis/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../3-Article/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
-    
-      <span><a href="../4-Cluster/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

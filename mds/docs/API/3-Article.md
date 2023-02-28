@@ -2,8 +2,9 @@
 This section introduces the class `Article` and `ArticleList`.
 
 ## Article
-The class `Article` is an internal class for TrendFlow. It has following instance attributes:
+The class `Article` is an internal class for TrendFlow. 
 
+### Instance Attributes
 - title (str): the title of the article
 - authors (list of str): the authors of the article
 - abstract (str): the abstract of the articles
