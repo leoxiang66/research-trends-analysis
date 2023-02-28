@@ -1,10 +1,7 @@
 from typing import List
 from .config import BaselineConfig, Configuration
 from ..utils import __create_model__
-import numpy as np
-# from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
-# from yellowbrick.cluster import KElbowVisualizer
 from .clusters import ClusterList
 from unsupervised_learning.clustering import GaussianMixture, Silhouette
 
