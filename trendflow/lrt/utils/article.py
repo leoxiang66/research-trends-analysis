@@ -32,7 +32,7 @@ class Article:
 
         return ret
 
-    def getDict(self) -> dict:
+    def to_dict(self) -> dict:
         return {
             'title': self.title,
             'authors': self.authors,
@@ -82,9 +82,9 @@ class ArticleList:
     def __len__(self):
         return len(self.__list__)
 
-    def getDataFrame(self) ->pd.DataFrame:
+    def to_dataframe(self) ->pd.DataFrame:
         return pd.DataFrame(
-            [x.getDict() for x in self.__list__]
+            [x.to_dict() for x in self.__list__]
         )
 
 
@@ -409,4 +409,4 @@ if __name__ == '__main__':
     for i in ieee_articles:
         print(i)
 
-    print(pwc_articles.getDataFrame())
+    print(pwc_articles.to_dataframe())
