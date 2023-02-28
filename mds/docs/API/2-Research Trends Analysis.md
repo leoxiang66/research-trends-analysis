@@ -1,5 +1,6 @@
 # Research Trends Analysis
 Based on the query entered by the user, TrendFlow
+
 1. search query on the documentation platform
 2. clustering the returned documents
 3. generate keywords for each clustering for research trends
