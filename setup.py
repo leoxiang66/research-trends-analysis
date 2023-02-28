@@ -22,7 +22,7 @@ requirements = [
 
 setup(
     name="TrendFlow",
-    version=f'0.1.1',
+    version=f'0.1.2',
     author="Tao Xiang",
     author_email="tao.xiang@tum.de",
     description="A tool for literature research and analysis",
