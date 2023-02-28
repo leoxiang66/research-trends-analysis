@@ -1,6 +1,5 @@
 pandas
 requests-toolkit-stable==0.8.0
-pyecharts==1.9.1
 evaluate==0.2.2
 sentence_transformers==2.2.2
 torch
@@ -11,4 +10,4 @@ datasets==2.5.2
 bokeh==2.4.1
 ml-leoxiang66==0.5.3
 KeyBartAdapter==0.1.12
-
+scikit_learn==1.0.2
