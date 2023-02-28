@@ -10,7 +10,7 @@ contact: tao.xiang@tum.de
 [[TrendFlow Doc](https://leoxiang66.github.io/research-trends-analysis/)]
 
 ## App on HuggingFace
-- [TrendFlow App](https://huggingface.co/spaces/Adapting/TrendFlow)
+[[TrendFlow App](https://huggingface.co/spaces/Adapting/TrendFlow)]
 
 
 
