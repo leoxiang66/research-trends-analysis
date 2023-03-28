@@ -76,7 +76,7 @@ def __create_model__(model_ckpt):
         return ret
     elif model_ckpt == 'dbscan':
         def ret(x,k):
-            model = DBSCAN(eps=0.5, min_samples=5)
+            model = DBSCAN(eps=1, min_samples=2)
             return model.fit_predict(x), None
         return ret
 
