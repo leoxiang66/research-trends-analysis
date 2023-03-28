@@ -82,7 +82,7 @@ def __create_model__(model_ckpt):
 
     elif model_ckpt == 'agglomerative':
         def  ret(x,k):
-            model = AgglomerativeClustering(n_clusters=k, distance_threshold=0)
+            model = AgglomerativeClustering(n_clusters=k)
             return model.fit_predict(x), None
         return ret
 
