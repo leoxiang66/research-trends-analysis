@@ -1,7 +1,7 @@
 from typing import List
 from sentence_transformers import SentenceTransformer
 import torch
-from sklearn.cluster import KMeans
+from sklearn.cluster import KMeans, DBSCAN, AgglomerativeClustering,SpectralClustering
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM,Text2TextGenerationPipeline
 from trendflow.inference_hf import InferenceHF
 from .dimension_reduction import PCA
@@ -23,7 +23,10 @@ class Template:
 
         self.clustering = {
             'kmeans-euclidean': KMeans,
-            'gmm': GaussianMixture
+            'gmm': GaussianMixture,
+            'dbscan':None,
+            'agglomerative': None,
+            'spectral':None
         }
 
         self.keywords_extraction = {
@@ -70,6 +73,23 @@ def __create_model__(model_ckpt):
             model = GaussianMixture(k,50)
             model.fit(x)
             return model.getLabels(), model.getClusterCenters()
+        return ret
+    elif model_ckpt == 'dbscan':
+        def ret(x,k):
+            model = DBSCAN(eps=0.5, min_samples=5)
+            return model.fit_predict(x), None
+        return ret
+
+    elif model_ckpt == 'agglomerative':
+        def  ret(x,k):
+            model = AgglomerativeClustering(n_clusters=k, distance_threshold=0)
+            return model.fit_predict(x), None
+        return ret
+
+    elif model_ckpt == 'spectral':
+        def ret(x,k):
+            model = SpectralClustering(n_clusters=k, eigen_solver='arpack', assign_labels='kmeans')
+            return model.fit_predict(x),None
         return ret
 
     elif model_ckpt == 'keyphrase-transformer':
