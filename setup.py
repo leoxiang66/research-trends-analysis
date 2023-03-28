@@ -16,7 +16,7 @@ requirements = [
 'transformers==4.22.1',
 'textdistance==4.5.0',
 'datasets==2.5.2',
-'ml-leoxiang66==0.5.3',
+'ml-leoxiang66',
 'KeyBartAdapter==0.1.12'
 ]
 
