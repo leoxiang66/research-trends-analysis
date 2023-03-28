@@ -88,7 +88,7 @@ def __create_model__(model_ckpt):
 
     elif model_ckpt == 'spectral':
         def ret(x,k):
-            model = SpectralClustering(n_clusters=k, eigen_solver='arpack', assign_labels='kmeans')
+            model = SpectralClustering(n_clusters=k, eigen_solver='arpack', assign_labels='kmeans', random_state=50)
             return model.fit_predict(x),None
         return ret
 
