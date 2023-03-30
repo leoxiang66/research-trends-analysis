@@ -80,7 +80,7 @@ class LiteratureResearchTool:
         return ret
 
 
-    def yield_(
+    def yield_(self,
             query: str,
             num_papers: int,
             start_year: int,
