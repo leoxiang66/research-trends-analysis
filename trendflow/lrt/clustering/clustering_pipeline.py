@@ -73,7 +73,7 @@ class ClusterPipeline:
                 return clusters, cluster_centers
             return clusters
 
-    def __4_keywords_extraction__(self, clusters: ClusterList, documents: List[str]):
+    def __4_keywords_generation__(self, clusters: ClusterList, documents: List[str]):
         '''
 
         :param clusters: N documents
@@ -82,7 +82,7 @@ class ClusterPipeline:
         if self.keywords_extraction is None:
             return clusters
         else:
-            print(f'>>> start keywords extraction')
+            print(f'>>> start keywords generation')
             for cluster in clusters:
                 doc_ids = cluster.get_elements()
                 input_abstracts = [documents[i] for i in doc_ids] #[str]
@@ -91,7 +91,7 @@ class ClusterPipeline:
                 # for doc_id in doc_ids:
                 #     keyphrases = self.keywords_extraction(documents[doc_id])
                 #     cluster.add_keyphrase(keyphrases)
-            print(f'>>> finished keywords extraction')
+            print(f'>>> finished keywords generation')
             return clusters
 
 
@@ -100,6 +100,6 @@ class ClusterPipeline:
         x = self.__1_generate_word_embeddings__(documents)
         x = self.__2_dimenstion_reduction__(x)
         clusters = self.__3_clustering__(x,max_k=max_k,standarization=standarization)
-        outputs = self.__4_keywords_extraction__(clusters, documents)
+        outputs = self.__4_keywords_generation__(clusters, documents)
         print(f'>>> pipeline finished!\n')
         return outputs
