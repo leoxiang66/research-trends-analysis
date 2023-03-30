@@ -136,14 +136,14 @@ def __create_model__(model_ckpt):
     elif model_ckpt == 'KeyBart':
         model_ckpt = template.keywords_extraction[model_ckpt]
         def ret(texts: List[str]):
-            # first try inference API
-            response = InferenceHF.inference(
-                inputs=texts,
-                model_name=model_ckpt
-            )
-
-            # inference failed:
-            if not isinstance(response,list):
+            # # first try inference API
+            # response = InferenceHF.inference(
+            #     inputs=texts,
+            #     model_name=model_ckpt
+            # )
+            #
+            # # inference failed:
+            # if not isinstance(response,list):
                 tokenizer = AutoTokenizer.from_pretrained(model_ckpt)
                 model = AutoModelForSeq2SeqLM.from_pretrained(model_ckpt)
                 pipe = Text2TextGenerationPipeline(model=model, tokenizer=tokenizer)
@@ -160,17 +160,17 @@ def __create_model__(model_ckpt):
 
                 return results
 
-            # inference sucsess
-            else:
-                results = [
-                    set(
-                        map(str.strip,
-                            x['generated_text'].split(';')  # [str...]
-                            )
-                    )
-                    for x in response]  # [{str...}...]
-
-                return results
+            # # inference sucsess
+            # else:
+            #     results = [
+            #         set(
+            #             map(str.strip,
+            #                 x['generated_text'].split(';')  # [str...]
+            #                 )
+            #         )
+            #         for x in response]  # [{str...}...]
+            #
+            #     return results
 
         return ret
 
