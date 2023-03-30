@@ -80,6 +80,26 @@ class LiteratureResearchTool:
         return ret
 
 
+    def yield_(
+            query: str,
+            num_papers: int,
+            start_year: int,
+            end_year: int,
+            max_k: int,
+            platforms: List[str] = ['IEEE', 'Arxiv', 'Paper with Code'],
+            loading_ctx_manager=None,
+            standardization=False
+    ):
+        for platform in platforms:
+            print(f'>>> Search on {platform}...')
+            if loading_ctx_manager:
+                with loading_ctx_manager():
+                    clusters, articles = self.__platformPipeline__(platform,query,num_papers,start_year,end_year,max_k,standardization)
+            else:
+                clusters, articles = self.__platformPipeline__(platform, query, num_papers, start_year, end_year,max_k,standardization)
+
+            clusters.sort()
+            yield clusters,articles
 
     def __platformPipeline__(self,platforn_name:str,
                              query: str,
