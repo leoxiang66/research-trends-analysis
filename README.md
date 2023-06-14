@@ -20,6 +20,23 @@ TrendFlow is an advanced framework that uses deep learning techniques to analyze
 [[TrendFlow App](https://huggingface.co/spaces/Adapting/TrendFlow)]
 
 
+## Citation
+```
+
+@Article{app13127029,
+AUTHOR = {Xiang, Tao and Chen, Sufang and Zhang, Yiwei and Zhu, Rui},
+TITLE = {TrendFlow: A Machine Learning Framework for Research Trend Analysis},
+JOURNAL = {Applied Sciences},
+VOLUME = {13},
+YEAR = {2023},
+NUMBER = {12},
+ARTICLE-NUMBER = {7029},
+URL = {https://www.mdpi.com/2076-3417/13/12/7029},
+ISSN = {2076-3417},
+ABSTRACT = {As various research fields continue to evolve, new technologies emerge constantly, making it challenging for scholars to keep up with the latest and most promising research directions. To address this issue, we propose TrendFlow, a framework that leverages machine learning and deep learning techniques for analyzing research trends. TrendFlow first searches relevant literature based on user-defined queries, then clusters the searched literature according to the abstracts, and finally generates keyphrases of the abstracts as research trends for each cluster. Our experimental results highlight the superior performance of TrendFlow compared to traditional literature analysis tools. We have released the beta version of TrendFlow on Huggingface.},
+DOI = {10.3390/app13127029}
+}
+```
 
 
 
