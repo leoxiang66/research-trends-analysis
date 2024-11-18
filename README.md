@@ -6,7 +6,7 @@
 <a href = "https://github.com/leoxiang66/research-trends-analysis">
 <img src="https://img.shields.io/github/stars/leoxiang66/research-trends-analysis.svg?style=social">
 </a>
-<a href = "https://leoxiang66.github.io/research-trends-analysis/"><img src="https://img.shields.io/website?label=documentation&up_message=online&url=https://leoxiang66.github.io/research-trends-analysis/"> </a>
+<a href = "https://research-trends-analysis.memomind.cn/"><img src="https://img.shields.io/website?label=documentation&up_message=online&url=https://research-trends-analysis.memomind.cn/"> </a>
 <a href="https://pypi.org/project/TrendFlow/"><img src="https://badge.fury.io/py/trendflow.svg" alt="PyPI version" /> </a>
 <a href="https://discord.gg/P5Y3FHgHRz">
         <img alt="chat on Discord" src="https://img.shields.io/discord/1091063040662843565?logo=discord">
